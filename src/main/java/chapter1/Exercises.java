@@ -35,15 +35,15 @@ public class Exercises {
         return fileDirectory.list((File dir, String name) ->  name.endsWith(fileType));
     }
 
-    //The lambda captures filetype from the enclosing scope.
+    // The lambda captures fileType from the enclosing scope.
 
 
     // 4. Given an array of File objects, sort it so that the directories come before the files, and
-    // within each group, elements are sorted by path name. Use a lambda expression, not a Comparator.
+    //    within each group, elements are sorted by path name. Use a lambda expression, not a Comparator.
 
     public static File[] sortDirectoriesBeforeFilesAlphabetically(File[] files) {
-        // If both parameters are directories, sort lexicagrahically
-        // If both parameters are files, forst lexicagraphically
+        // If both parameters are directories, sort lexigrahically
+        // If both parameters are files, sort lexigraphically
         // If different, sort directory first
 
         Comparator<File> comp = (File f1, File f2) -> {
