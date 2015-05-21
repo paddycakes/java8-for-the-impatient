@@ -6,5 +6,9 @@ public class ExercisesTest {
     //    write a method that returns all subdirectories of a given directory. Use a lambda
     //    expression instead of a FileFilter object. Repeat with a method expression.
 
+    // @Test
+    public void testOne() {
+
+    }
 
 }
