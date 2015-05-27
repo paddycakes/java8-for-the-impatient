@@ -1,7 +1,6 @@
 package chapter1;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -58,4 +57,36 @@ public class Exercises {
         Arrays.sort(files, comp);
         return files;
     }
+
+
+    //5. Didn’t you always hate it that you had to deal with checked exceptions in a Runnable?
+    // Write a method uncheck that catches all checked exceptions and turns them into unchecked exceptions. For example,
+    //new Thread(uncheck(
+    //        () -> { System.out.println("Zzz"); Thread.sleep(1000); })).start();
+// Look, no catch (InterruptedException)!
+  //  Hint: Define an interface RunnableEx whose run method may throw any excep- tions. Then implement public static Runnable uncheck(RunnableEx runner). Use a lambda expression inside the uncheck function.
+
+    public static Runnable uncheck(RunnableEx runner) {
+        return () -> {
+            try {
+                runner.run();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        };
+    }
+
+  //  6. Write a static method andThen that takes as parameters two Runnable instances
+  // and returns a Runnable that runs the first, then the second. In the main method,
+  // pass two lambda expressions into a call to andThen, and run the returned instance.
+
+    public static Runnable andThen(Runnable first, Runnable second){
+        return () -> {
+                first.run();
+                second.run();
+        };
+    }
+
+
+
 }
