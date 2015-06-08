@@ -1,7 +1,5 @@
 package chapter1;
 
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
 /**
  * Created by paddy on 08/06/2015.
  */
