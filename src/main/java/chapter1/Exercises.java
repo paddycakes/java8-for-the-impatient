@@ -2,8 +2,10 @@ package chapter1;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 public class Exercises {
 
@@ -58,4 +60,30 @@ public class Exercises {
         Arrays.sort(files, comp);
         return files;
     }
+
+
+    // 8.
+
+    public static List<Runnable> getRunnables() {
+        String[] names = { "Peter", "Paul", "Mary" };
+        List<Runnable> runners = new ArrayList<>();
+        for (int i = 0; i < names.length; i++) {
+            runners.add(() -> System.out.println(names));
+        }
+        return runners;
+    }
+
+    // A traditional for loop won't work as the variable i would need to be final
+    // and thus could not be mutated.
+
+
+    // 9. Form a subclass Collection2 from Collection and add a default method
+    // void forEachIf(Consumer<T> action, Predicate<T> filter) that applies action to each
+    // element for which filter returns true. How could you use it?
+
+
+
+    // 11.
+
+
 }

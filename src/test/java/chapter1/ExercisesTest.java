@@ -3,6 +3,7 @@ package chapter1;
 import org.junit.Test;
 
 import java.io.File;
+import java.util.List;
 
 public class ExercisesTest {
 
@@ -13,9 +14,18 @@ public class ExercisesTest {
 
     // 4. Given an array of File objects, sort it so that the directories come before the files, and
     //    within each group, elements are sorted by path name. Use a lambda expression, not a Comparator.
-    @Test
-    public void testSortDirectoriesBeforeFilesAlphabetically() {
 
+
+
+    @Test
+    public void testLambdaCapture() {
+        List<Runnable> runnableList = Exercises.getRunnables();
+        for (Runnable runnable : runnableList) {
+            new Thread(runnable).start();;
+        }
     }
+
+
+
 
 }
